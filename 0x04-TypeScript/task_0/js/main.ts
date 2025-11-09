@@ -1,3 +1,4 @@
+// 1. Create the Student interface
 interface Student {
   firstName: string;
   lastName: string;
@@ -5,44 +6,43 @@ interface Student {
   location: string;
 }
 
+// 2. Create two student objects
 const student1: Student = {
-  firstName: "Kessiena",
-  lastName: "Obehi",
-  age: 25,
-  location: "Lagos"
+  firstName: "Lois",
+  lastName: "Nkeiru",
+  age: 23,
+  location: "Lagos",
 };
 
 const student2: Student = {
-  firstName: "Amaka",
-  lastName: "Olu",
-  age: 22,
-  location: "Abuja"
-}
+  firstName: "David",
+  lastName: "Mark",
+  age: 25,
+  location: "Abuja",
+};
 
+// 3. Create students list array
 const studentsList: Student[] = [student1, student2];
 
-// Create a table element
+// 4. Render a table using Vanilla JavaScript
 const table = document.createElement("table");
+const tableBody = document.createElement("tbody");
 
-// For each student in the list
-studentsList.forEach((student) => {
-  // Create a new row
+// Loop through the studentsList and add each row
+studentsList.forEach((student: Student): void => {
   const row = document.createElement("tr");
-   // Create two cells: one for firstName and one for location
-  const nameCell = document.createElement("td");
+
+  const firstNameCell = document.createElement("td");
   const locationCell = document.createElement("td");
 
-   // Fill the cells with data
-  nameCell.textContent = student.firstName;
+  firstNameCell.textContent = student.firstName;
   locationCell.textContent = student.location;
 
-  // Add the cells to the row
-  row.appendChild(nameCell);
+  row.appendChild(firstNameCell);
   row.appendChild(locationCell);
-
-  // Add the row to the table
-  table.appendChild(row);
+  tableBody.appendChild(row);
 });
 
-// Add the table to the web page
+// Append table to the DOM
+table.appendChild(tableBody);
 document.body.appendChild(table);
