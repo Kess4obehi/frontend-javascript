@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "outFile": "main.js",
+    "strict": true
+  },
+  "files": [
+    "main.ts",
+    "subjects/Teacher.ts",
+    "subjects/Subject.ts",
+    "subjects/Cpp.ts",
+    "subjects/Java.ts",
+    "subjects/React.ts"
+  ]
+}
