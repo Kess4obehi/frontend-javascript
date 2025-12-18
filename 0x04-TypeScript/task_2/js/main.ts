@@ -43,18 +43,18 @@ workTeacherTasks(): string {
 
 type Employee = Director | Teacher;
 
-function createEmployee(salary: number | string): Employee {
+export function createEmployee(salary: number | string): Employee {
   if (typeof salary === "number" && salary < 500) {
     return new Teacher();
   }
     return new Director();
   }
 
-function isDirector(employee: Employee): employee is Director{
+export function isDirector(employee: Employee): employee is Director{
 return employee instanceof Director;
 }
 
-function executeWork(employee: Employee): string {
+export function executeWork(employee: Employee): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks(); 
   }
@@ -63,7 +63,7 @@ return employee.workTeacherTasks();
 
 type Subjects = "Math" | "History";
 
-function teachClass(todayClass: Subjects): string {
+export function teachClass(todayClass: Subjects): string {
   if (todayClass === "Math") {
     return "Teaching Math";
   }
